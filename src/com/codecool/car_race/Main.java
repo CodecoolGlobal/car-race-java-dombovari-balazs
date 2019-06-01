@@ -1,12 +1,19 @@
 package com.codecool.car_race;
 
 
+import java.util.*;
+
 public class Main {
 
     /**
      * Creates all the vehicles that will be part of this race.
      */
     private static void createVehicles(Race race) {
+        List<Object> motorcycles =  new ArrayList<Object>();
+        for(int i = 0; i < 10 ; i++){
+            Motorcycle motor = new Motorcycle(i + 1);
+            motorcycles.add(motor);
+        }
     }
 
     /**
