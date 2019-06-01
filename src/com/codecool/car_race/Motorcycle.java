@@ -23,6 +23,13 @@ public class Motorcycle extends Vechicle {
         this.motorcycleNumber = motorcycleNumber;
     }
 
+    @Override
+    public String toString() {
+        return "Motorcycle{" +
+                "name=" + this.getName() +
+                ", speed=" + speed +
+                '}';
+    }
 
     @Override
     public int moveForAnHour() {
