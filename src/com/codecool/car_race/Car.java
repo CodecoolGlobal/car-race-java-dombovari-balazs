@@ -20,13 +20,11 @@ public class Car  extends  Vechicle{
     private int normalSpeed = 100;
 
     @Override
-    public int moveForAnHour() {
-        return 0;
+    public void moveForAnHour() {
     }
 
     @Override
-    public int prepareForLap(Race race) {
-        return 0;
+    public void prepareForLap(Race race) {
     }
 
 }

@@ -1,7 +1,6 @@
 package com.codecool.car_race;
 
 
-import java.util.*;
 
 public class Main {
 

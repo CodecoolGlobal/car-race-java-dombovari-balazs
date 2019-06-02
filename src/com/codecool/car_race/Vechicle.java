@@ -20,8 +20,8 @@ public abstract class Vechicle {
         this.name = name;
     }
 
-    public abstract int moveForAnHour();
-    public abstract int prepareForLap(Race race);
+    public abstract void moveForAnHour();
+    public abstract void prepareForLap(Race race);
 
 
 }
