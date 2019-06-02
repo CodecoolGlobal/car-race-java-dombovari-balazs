@@ -31,6 +31,7 @@ public class Motorcycle extends Vechicle {
         return "Motorcycle{" +
                 "name=" + this.getName() +
                 ", speed=" + speed +
+                ", distanceTraveled=" + this.getDistanceTraveled() +
                 '}';
     }
 

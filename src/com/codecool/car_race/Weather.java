@@ -12,5 +12,6 @@ public class Weather {
     public void setRaining() {
         Random random = new Random();
         int chance = random.nextInt(100);
+        isRaining  = chance <= 30; // EZ MENNYIRE KIRÁLY
     }
 }
