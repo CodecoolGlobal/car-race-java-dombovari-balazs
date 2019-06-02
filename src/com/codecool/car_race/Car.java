@@ -1,4 +1,7 @@
 package com.codecool.car_race;
+
+import java.util.Random;
+
 /*
 *
 Car // If there is a broken down Truck on the track, then limit the max speed of cars to 75 km/h.
@@ -17,14 +20,37 @@ Car // If there is a broken down Truck on the track, then limit the max speed of
 * */
 // If there is a broken down Truck on the track, then limit the max speed of cars to 75 km/h.
 public class Car  extends  Vechicle{
-    private int normalSpeed = 100;
+    private int normalSpeed;
+
+    private boolean slowed;
+
+    Car(String carName){
+        Random random = new Random();
+        this.setName(carName);
+        this.normalSpeed = 80 + random.nextInt(30);
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name=" + this.getName() +
+                ", speed=" + this.normalSpeed +
+                ", distanceTraveled=" + this.getDistanceTraveled() +
+                '}';
+    }
 
     @Override
     public void moveForAnHour() {
+        if (slowed) {
+            this.setDistanceTraveled(getDistanceTraveled() + 75);
+        } else {
+            this.setDistanceTraveled(getDistanceTraveled() + this.normalSpeed);
+        }
     }
 
     @Override
     public void prepareForLap(Race race) {
+        this.slowed = race.isBrokenTruck();
     }
 
 }
