@@ -1,6 +1,8 @@
 package com.codecool.car_race;
 
 
+import java.util.Random;
+
 public class Main {
 
     /**
@@ -24,8 +26,14 @@ public class Main {
             Motorcycle motor = new Motorcycle(i + 1);
             race.addMotor(motor);
 
-            Car car = new Car(carNames[i]);
+            Random random = new Random();
+            int name1 = random.nextInt(10);
+            int name2 = random.nextInt(10);
+            Car car = new Car(carNames[name1], carNames[name2]);
             race.addCar(car);
+
+            Truck truck = new Truck(i + 1 + "");
+            race.addTruck(truck);
 
 
         }

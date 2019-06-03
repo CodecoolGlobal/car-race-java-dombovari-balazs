@@ -20,31 +20,22 @@ Car // If there is a broken down Truck on the track, then limit the max speed of
 * */
 // If there is a broken down Truck on the track, then limit the max speed of cars to 75 km/h.
 public class Car  extends  Vechicle{
-    private int normalSpeed;
 
     private boolean slowed;
 
-    Car(String carName){
+    Car(String carName1, String carName2){
         Random random = new Random();
-        this.setName(carName);
-        this.normalSpeed = 80 + random.nextInt(30);
+        this.setName(carName1 + " " + carName2);
+        this.setNormalSpeed(80 + random.nextInt(30));
     }
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "name=" + this.getName() +
-                ", speed=" + this.normalSpeed +
-                ", distanceTraveled=" + this.getDistanceTraveled() +
-                '}';
-    }
 
     @Override
     public void moveForAnHour() {
         if (slowed) {
             this.setDistanceTraveled(getDistanceTraveled() + 75);
         } else {
-            this.setDistanceTraveled(getDistanceTraveled() + this.normalSpeed);
+            this.setDistanceTraveled(getDistanceTraveled() + this.getNormalSpeed());
         }
     }
 

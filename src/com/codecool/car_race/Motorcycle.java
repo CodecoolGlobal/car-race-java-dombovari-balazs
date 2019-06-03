@@ -10,34 +10,25 @@ import java.util.Random;
 * */
 
 public class Motorcycle extends Vechicle {
-    private int speed = 100;
 
     Motorcycle(int motorcycleNumber){
         this.setName("Motorcycle " + motorcycleNumber);
+        this.setNormalSpeed(100);
     }
 
-
-    @Override
-    public String toString() {
-        return "Motorcycle{" +
-                "name=" + this.getName() +
-                ", speed=" + speed +
-                ", distanceTraveled=" + this.getDistanceTraveled() +
-                '}';
-    }
 
     @Override
     public void moveForAnHour() {
-        this.setDistanceTraveled(this.getDistanceTraveled() + this.speed);
+        this.setDistanceTraveled(this.getDistanceTraveled() + this.getNormalSpeed());
     }
 
     @Override
     public void prepareForLap(Race race) {
         Random random = new Random();
         if(race.isRaining()){
-            this.speed =  100 - (random.nextInt(45) + 5) ;
+            this.setNormalSpeed(100 - (random.nextInt(45) + 5) );
         }else{
-            this.speed = 100;
+            this.setNormalSpeed(100);
         }
 
     }

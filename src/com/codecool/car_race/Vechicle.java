@@ -4,6 +4,16 @@ public abstract class Vechicle {
     private String name;
     private int distanceTraveled;
 
+    public int getNormalSpeed() {
+        return normalSpeed;
+    }
+
+    public void setNormalSpeed(int normalSpeed) {
+        this.normalSpeed = normalSpeed;
+    }
+
+    private int normalSpeed;
+
     public int getDistanceTraveled() {
         return distanceTraveled;
     }
@@ -23,5 +33,11 @@ public abstract class Vechicle {
     public abstract void moveForAnHour();
     public abstract void prepareForLap(Race race);
 
-
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "{" +
+                "name=" + this.getName() +
+                ", distanceTraveled=" + this.getDistanceTraveled() +
+                '}';
+    }
 }
