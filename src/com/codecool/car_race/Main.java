@@ -38,7 +38,7 @@ public class Main {
 
         }
     }
-
+        // todo: Do I have to create JavaDoc thing? :D
     /**
      * Entry point of our program. Creates one race instance and
      * uses that.
