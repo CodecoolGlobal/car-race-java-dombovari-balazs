@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Race {
     // todo: creating List of abstrack Class is good?
+    // todo: this can be stored in one list.
     private List<Vechicle> motorcycles =  new ArrayList<>();
     private List<Vechicle> cars =  new ArrayList<>();
     private List<Vechicle> trucks =  new ArrayList<>();
@@ -44,6 +45,7 @@ public class Race {
             isBrokenTruck = false; // todo
 
             //todo: fixing 3 for loop thing in simulating
+            // If I use interface here, instanceOF() can be skipped
             for (Vechicle v : trucks) {
                 v.prepareForLap(this);
                 v.moveForAnHour();
