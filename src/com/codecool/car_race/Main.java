@@ -24,16 +24,16 @@ public class Main {
 
         for(int i = 0; i < 10 ; i++){
             Motorcycle motor = new Motorcycle(i + 1);
-            race.addMotor(motor);
+            race.addVehicle(motor);
 
             Random random = new Random();
             int name1 = random.nextInt(10);
             int name2 = random.nextInt(10);
             Car car = new Car(carNames[name1], carNames[name2]);
-            race.addCar(car);
+            race.addVehicle(car);
 
             Truck truck = new Truck(i + 1 + "");
-            race.addTruck(truck);
+            race.addVehicle(truck);
 
 
         }
