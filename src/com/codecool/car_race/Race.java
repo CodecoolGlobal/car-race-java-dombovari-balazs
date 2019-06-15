@@ -5,12 +5,12 @@ import java.util.*;
 public class Race {
     // todo: creating List of abstrack Class is good?
 
-    private List<Vechicle> vehicles =  new ArrayList<>();
-
+    private List<Vechicle> vehicles = new ArrayList<>();
 
 
     private boolean isRaining;
     private boolean isBrokenTruck;
+    private int brokenTruckTurnsLeft;
 
 
     public boolean isRaining() {
@@ -25,19 +25,24 @@ public class Race {
         isBrokenTruck = brokenTruck;
     }
 
-    public void addVehicle(Vechicle vehicle){
+    public void updateBrokenTruck() {
+        isBrokenTruck = brokenTruckTurnsLeft-- > 0;
+    }
+
+
+    public void addVehicle(Vechicle vehicle) {
         vehicles.add(vehicle);
     }
 
-    public void simulateRace(){
+    public void simulateRace() {
         Weather weather = new Weather();
-        for (int i = 0 ; i < 50 ;i ++){
+        for (int i = 0; i < 50; i++) {
+
 
             weather.setRaining();
             isRaining = weather.isRaining();
 
-            isBrokenTruck = false; // todo
-
+            updateBrokenTruck();
             for (Vechicle v : vehicles) {
                 v.prepareForLap(this);
                 v.moveForAnHour();
@@ -48,7 +53,7 @@ public class Race {
 
     }
 
-    public void printRaceResults(){
+    public void printRaceResults() {
 
         for (Vechicle v : vehicles) {
             System.out.println(v.toString());

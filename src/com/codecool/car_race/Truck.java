@@ -41,9 +41,9 @@ public class   Truck extends Vechicle{
     public void prepareForLap(Race race) {
         Random random = new Random();
         int chance = random.nextInt(100);
-        if(chance < 5) breakdownTurnsLeft = 2; // todo: ask the owner if the truck can broke down
-                                                //  if it's already broken down
         if (breakdownTurnsLeft > 0) race.setBrokenTruck(true);
+        else if(chance < 5) breakdownTurnsLeft = 2; // todo: ask the owner if the truck can broke down
+        //  if it's already broken down
 
     }
 
